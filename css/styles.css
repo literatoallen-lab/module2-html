@@ -11,6 +11,11 @@ body {
     padding: 20px;
 }
 
+body.dark-mode {
+    background-color: #222; /*  */
+    color: white; /*  */
+}
+
 .container {
     max-width: 800px;
     margin: 0 auto;
@@ -22,6 +27,11 @@ body {
     margin-bottom: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.dark-mode .card {
+    background: #333;
+    color: white;
 }
 
 h1 {
@@ -86,4 +96,16 @@ button {
 
 button:hover {
     background-color: #8ba888;
+}
+
+.hidden {
+    display: none; /*  */
+}
+
+.dark-mode th {
+    background-color: #555;
+}
+
+.dark-mode a {
+    color: #a8c8a5;
 }

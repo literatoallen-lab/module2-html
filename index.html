@@ -9,15 +9,18 @@
 <body>
 
     <header>
-        <section class="card"> <h1>Allen Literato</h1>
+        <section class="card"> 
+            <h1>Allen Literato</h1>
             <p>IT Student | Web Systems and Technologies</p>
+            <button id="themeToggle">Toggle Dark Mode</button>
         </section>
     </header>
 
     <main>
         <div class="container"> 
             
-            <section class="card"> <h2>About Me</h2>
+            <section class="card"> 
+                <h2>About Me</h2>
                 <img src="images/profile.jpg" alt="Profile photo">
                 <p>Simple student and focused on acads.</p>
                 
@@ -25,7 +28,9 @@
                 GitHub: <a href="https://github.com/literatoallen-lab" target="_blank">github.com</a></p>
             </section>
 
-            <section class="card"> <h2>Skills</h2>
+            <button id="toggleSkills">Show/Hide Skills</button>
+            <section class="card" id="skillsSection"> 
+                <h2>Skills</h2>
                 <ul>
                     <li>Web Development
                         <ul>
@@ -74,18 +79,21 @@
 
             <section class="card"> <h2>Contact Me</h2>
                 <form>
-                    <input type="text" placeholder="Name">
-                    <input type="email" placeholder="Email">
+                    <input type="text" id="name" placeholder="Name">
+                    <input type="email" id="email" placeholder="Email">
                     <textarea placeholder="Message"></textarea>
-                    <button type="submit">Send</button>
+                    <button type="submit" id="submitBtn">Send</button>
                 </form>
             </section>
 
-        </div> </main>
+        </div> 
+    </main>
 
     <footer>
         <p>&copy; 2026 Allen Literato. All rights reserved.</p>
     </footer>
+
+    <script src="js/script.js"></script>
 
 </body>
 </html>
