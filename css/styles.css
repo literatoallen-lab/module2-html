@@ -8,12 +8,14 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #f1ebe1;
+    color: #333;
     padding: 20px;
+    transition: 0.3s;
 }
 
 body.dark-mode {
-    background-color: #222; /*  */
-    color: white; /*  */
+    background-color: #222;
+    color: white;
 }
 
 .container {
@@ -22,7 +24,7 @@ body.dark-mode {
 }
 
 .card {
-    background: #f1ebe1;
+    background: #fff;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
@@ -32,6 +34,7 @@ body.dark-mode {
 .dark-mode .card {
     background: #333;
     color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
 h1 {
@@ -54,6 +57,10 @@ a {
     color: #8ba888;
 }
 
+.dark-mode a {
+    color: #a8c8a5;
+}
+
 a:hover {
     color: #8ba888;
 }
@@ -74,6 +81,11 @@ th {
     color: white;
 }
 
+.dark-mode th {
+    background-color: #555;
+    color: white;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -82,30 +94,11 @@ form {
 
 input, textarea {
     padding: 8px;
-    border: 1px solid ;
+    border: 1px solid #ccc;
     border-radius: 4px;
 }
 
 button {
     padding: 10px;
     background-color: #8ba888cc;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #8ba888;
-}
-
-.hidden {
-    display: none; /*  */
-}
-
-.dark-mode th {
-    background-color: #555;
-}
-
-.dark-mode a {
-    color: #a8c8a5;
 }
