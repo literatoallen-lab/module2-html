@@ -1,13 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="css/styles.css"> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Allen Literato - CV</title>
-    <link rel="stylesheet" href="/src/index.css">
+    <title>Personal Online CV</title>
 </head>
 <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+
+    <header>
+        <section>
+            <h1>Allen Literato</h1>
+            <p>IT Student | Web Systems and Technologies</p>
+            <button id="themeToggle">Toggle dark Mode</button>
+        </section>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="card">
+                <h2>About Me</h2>
+                <img src="images/profile.jpg" alt="Profile">
+                <p>Study first.</p>
+                
+                <p>Email: <a href="mailto:literato.allen@gmail.com">literato.allen@gmail.com</a><br>
+                GitHub: <a href="https://github.com/literatoallen-lab" target="_blank">github.com</a></p>
+            </section>
+
+            <button id="toggleSkills">Show/Hide Skills</button>
+            <section class="card" id="skillsSection">
+                <h2>Skills</h2>
+                <ul>
+                    <li>Web Development
+                        <ul>
+                            <li>Frontend
+                                <ul>
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>JavaScript</li>
+                                </ul>
+                            </li>
+                            <li>Backend</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>Education</h2>
+                <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse;">
+                    <tr>
+                        <th>Program</th>
+                        <th>Institution</th>
+                        <th>Year Graduated</th>
+                    </tr>
+                    <tr>
+                        <td>COLLEGE</td>
+                        <td>USTP CDO Campus</td>
+                        <td>2028</td>
+                    </tr>
+                    <tr>
+                        <td>SENIOR HIGH</td>
+                        <td>ABCCA CDO Campus</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td>HIGH SCHOOL</td>
+                        <td>LNHS</td>
+                        <td>2022</td>
+                    </tr>
+                    <tr>
+                        <td>ELEMENTARY SCHOOL</td>
+                        <td>ECCS</td>
+                        <td>2018</td>
+                    </tr>
+                </table>
+            </section>
+
+            <section class="card">
+                <h2>Contact Me</h2>
+                <form>
+                    <input type="text" id="name" placeholder="Name"><br><br>
+                    <input type="email" id="email" placeholder="Email"><br><br>
+                    <textarea placeholder="Message"></textarea><br><br>
+                    
+                    <button type="submit" id="submitBtn">Send</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Allen Literato. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

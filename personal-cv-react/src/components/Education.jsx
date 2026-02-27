@@ -1,8 +1,7 @@
 function Education() {
   return (
-    <section className="card">
+    <section className="card"> 
       <h2>Education</h2>
-
       <table>
         <thead>
           <tr>
@@ -11,7 +10,6 @@ function Education() {
             <th>Year Graduated</th>
           </tr>
         </thead>
-
         <tbody>
           <tr>
             <td>COLLEGE</td>
@@ -19,18 +17,18 @@ function Education() {
             <td>2028</td>
           </tr>
           <tr>
-            <td>SENIOR HIGH SCHOOL</td>
+            <td>SENIOR HIGH</td>
             <td>ABCCA CDO Campus</td>
             <td>2024</td>
           </tr>
           <tr>
             <td>HIGH SCHOOL</td>
-            <td>Lapasan National High School</td>
+            <td>LNHS</td>
             <td>2022</td>
           </tr>
           <tr>
             <td>ELEMENTARY</td>
-            <td>East City Central School</td>
+            <td>ECCS</td>
             <td>2018</td>
           </tr>
         </tbody>
@@ -38,5 +36,4 @@ function Education() {
     </section>
   );
 }
-
 export default Education;
