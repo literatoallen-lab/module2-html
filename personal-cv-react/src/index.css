@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,8 +8,24 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
+    background-color: #f1ebe1; 
     padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+.dark-mode {
+    background-color: #222; 
+    color: white; 
+}
+
+.dark-mode .card {
+    background: #333;
+    color: white;
+}
+
+.dark-mode th {
+    background-color: #555;
 }
 
 
@@ -17,9 +34,8 @@ body {
     margin: 0 auto;
 }
 
-
 .card {
-    background: #ffffff;
+    background: #f1ebe1; 
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
@@ -37,20 +53,13 @@ h2 {
     margin-top: 20px;
 }
 
-
-ul {
-    margin-left: 20px;
-    margin-bottom: 10px;
-}
-
-
 a {
     text-decoration: none;
-    color: #0077cc;
+    color: #c0cfb2;
 }
 
 a:hover {
-    color: #005fa3;
+    color: #aebc9f; 
 }
 
 
@@ -66,7 +75,7 @@ th, td {
 }
 
 th {
-    background-color: #0077cc;
+    background-color: #c0cfb2; 
     color: white;
 }
 
@@ -85,28 +94,18 @@ input, textarea {
 
 button {
     padding: 10px;
-    background-color: #0077cc;
+    background-color: #c0cfb2; 
     color: white;
     border: none;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
 button:hover {
-    background-color: #005fa3;
+    background-color: #aebc9f; 
 }
 
-.dark-mode {
-    background-color:#222;
-    color:rgb(243, 238, 238);
-    .card {
-        background: #222020;
-        padding: 20px;
-        margin-bottom: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-}
 
 .hidden {
-    display:none;
+    display: none; 
 }
