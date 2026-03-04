@@ -5,8 +5,7 @@ function About() {
     <section className="card">
       <h2>About Me</h2>
       <p>
-          Welcome! I work professionally and
-        is passionate about arts and technologies.
+        Study First.
       </p>
       {}
       <img src={profileImg} alt="Profile" />
