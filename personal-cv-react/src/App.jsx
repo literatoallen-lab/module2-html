@@ -14,7 +14,7 @@ function App() {
   const education = [
     {
       year: "2028",
-      program: "BS Information Technology",
+      program: "College",
       school: "USTP CDO Campus"
     },
     {
