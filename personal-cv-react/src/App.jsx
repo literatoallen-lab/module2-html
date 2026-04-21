@@ -3,13 +3,13 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Education from "./components/Education";
 import Contact from "./components/Contact";
+import ContactList from "./components/ContactList"; // Gi-import ang ContactList
 import { useState } from "react";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
 
   const skills = ["HTML", "CSS", "JavaScript", "React"];
-
 
   const education = [
     {
@@ -45,6 +45,8 @@ function App() {
       <Skills skills={skills} />
       <Education education={education} />
       <Contact />
+      {/* Gi-display ang ContactList sa ubos sa Contact component */}
+      <ContactList />
     </div>
   );
 }

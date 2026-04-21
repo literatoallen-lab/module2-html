@@ -4,7 +4,7 @@ function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     fetch("http://localhost/cv-api/process.php", {
@@ -19,18 +19,18 @@ function Contact() {
     })
       .then((response) => response.json())
       .then((data) => {
-        
         if (data.message) {
           alert(data.message);
-        } else {
-          alert("Connected, but no message from PHP.");
+          // I-clear ang form fields human ma-save sa database
+          setName("");
+          setEmail("");
         }
       })
       .catch((error) => {
         console.error("Error:", error);
-        alert("Success! Your PHP backend is now connected.");
-      }); 
-  }
+        alert("Failed to connect to the server.");
+      });
+  };
 
   return (
     <section className="card">
