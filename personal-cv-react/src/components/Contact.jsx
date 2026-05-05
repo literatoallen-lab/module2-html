@@ -1,57 +1,39 @@
 import { useState } from "react";
 
 function Contact() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [emailAddr, setEmailAddr] = useState("");
+  const [userMsg, setUserMsg] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleFormSubmission = (e) => {
     e.preventDefault();
 
     fetch("http://localhost/cv-api/process.php", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: name,
-        email: email,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ 
+        name: fullName, 
+        email: emailAddr, 
+        message: userMsg 
       }),
     })
-      .then((response) => response.json())
+      .then((res) => res.json())
       .then((data) => {
-        if (data.message) {
-          alert(data.message);
-          // I-clear ang form fields human ma-save sa database
-          setName("");
-          setEmail("");
-        }
+        alert("Alert: " + data.message);
+        setFullName(""); setEmailAddr(""); setUserMsg("");
+        window.location.reload(); 
       })
-      .catch((error) => {
-        console.error("Error:", error);
-        alert("Failed to connect to the server.");
-      });
+      .catch((err) => console.error("Error:", err));
   };
 
   return (
-    <section className="card">
-      <h2>Contact Me</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <textarea placeholder="Message"></textarea>
-        <button type="submit">Send</button>
+    <section className="contact-box">
+      <h2>Send a Message</h2>
+      <form onSubmit={handleFormSubmission}>
+        <input type="text" placeholder="Full Name" value={fullName} onChange={(e) => setFullName(e.target.value)} required />
+        <input type="email" placeholder="Email Address" value={emailAddr} onChange={(e) => setEmailAddr(e.target.value)} required />
+        <textarea placeholder="Write your message here..." value={userMsg} onChange={(e) => setUserMsg(e.target.value)} required></textarea>
+        <button type="submit">Send Feedback</button>
       </form>
     </section>
   );

@@ -1,24 +1,63 @@
 import { useEffect, useState } from "react";
 
 function ContactList() {
-  const [contacts, setContacts] = useState([]);
+  const [entries, setEntries] = useState([]);
+  const [editingId, setEditingId] = useState(null);
+  const [newText, setNewText] = useState("");
 
-  useEffect(() => {
+  const loadEntries = () => {
+    
     fetch("http://localhost/cv-api/getContacts.php")
       .then((res) => res.json())
-      .then((data) => setContacts(data));
+      .then((data) => setEntries(data));
+  };
+
+  useEffect(() => {
+    loadEntries();
   }, []);
 
+  const deleteEntry = (id) => {
+    if (window.confirm("Do you want to delete this?")) {
+      
+      fetch("http://localhost/cv-api/deleteContact.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id }),
+      }).then(() => loadEntries());
+    }
+  };
+
+  const saveUpdate = (id) => {
+   
+    fetch("http://localhost/cv-api/updateContact.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id, message: newText }),
+    }).then(() => {
+      setEditingId(null);
+      loadEntries();
+    });
+  };
+
   return (
-    <div style={{ marginTop: "20px", padding: "10px", borderTop: "1px solid #ccc" }}>
-      <h2>Saved Contacts</h2>
-      <ul>
-        {contacts.map((contact) => (
-          <li key={contact.id}>
-            <strong>{contact.name}</strong> - {contact.email}
-          </li>
-        ))}
-      </ul>
+    <div style={{ marginTop: "30px" }}>
+      <h2>Message Records</h2>
+      {entries.map((item) => (
+        <div key={item.id} style={{ border: "1px solid gray", padding: "10px", margin: "10px 0" }}>
+          <p><strong>{item.name}</strong> ({item.email})</p>
+          {editingId === item.id ? (
+            <div>
+              <textarea value={newText} onChange={(e) => setNewText(e.target.value)} /> <br/>
+              <button onClick={() => saveUpdate(item.id)}>Save</button>
+              <button onClick={() => setEditingId(null)}>Cancel</button>
+            </div>
+          ) : (
+            <p>{item.message}</p>
+          )}
+          <button onClick={() => { setEditingId(item.id); setNewText(item.message); }}>Edit</button>
+          <button onClick={() => deleteEntry(item.id)} style={{ color: "red" }}>Delete</button>
+        </div>
+      ))}
     </div>
   );
 }
